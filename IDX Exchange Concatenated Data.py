@@ -51,3 +51,6 @@ print(f"Number of residential listings: {len(listing)}") #returns number of rows
 #before and after concatenation check: 603958 + 847319 = 1451277
 
 #before and after filtering for residential properties: 405917 + 539276 = 945193
+
+sold.to_csv("sold_residential.csv")
+listing.to_csv("listing_residential.csv")
