@@ -30,9 +30,9 @@ for file, df in zip(sold_files, sold_list): #adds number of rows of each sold da
 print(f"Total Sold Rows: {sum(sold_rows)}") #returns total of rows of sold data: 603958 rows
 
 sold = pd.concat(sold_list, ignore_index = True) #concatenates sold dataframes into one
-sold = sold[sold["PropertyType"] == "Residential"] #filters sold dataframe to residential only
+sold_residential = sold[sold["PropertyType"] == "Residential"] #filters sold dataframe to residential only
 
-print(f"Number of residential solds: {len(sold)}") #returns number of rows of residential sold data:  405917
+print(f"Number of residential solds: {len(sold_residential)}") #returns number of rows of residential sold data:  405917
 
 listing_files = glob.glob("C:/Users/lilly/IDX Exchange Fall 2026/csv/CRMLSListing*.csv") #finds all listing files
 listing_list = [pd.read_csv(file) for file in listing_files] #creates list of dataframes from listing
@@ -44,13 +44,16 @@ for file, df in zip(listing_files, listing_list): #adds number of rows of each l
 print(f"Total Listing Rows: {sum(listing_rows)}") #returns total of rows of listing data: 847319 rows
 
 listing = pd.concat(listing_list, ignore_index = True) #concatenates listing dataframes into one
-listing = listing[listing["PropertyType"] == "Residential"] #filters listing dataframe to residential only
+listing_residential = listing[listing["PropertyType"] == "Residential"] #filters listing dataframe to residential only
 
-print(f"Number of residential listings: {len(listing)}") #returns number of rows of residential listing data: 539276 rows
+print(f"Number of residential listings: {len(listing_residential)}") #returns number of rows of residential listing data: 539276 rows
 
 #before and after concatenation check: 603958 + 847319 = 1451277
 
 #before and after filtering for residential properties: 405917 + 539276 = 945193
 
-sold.to_csv("sold_residential.csv")
-listing.to_csv("listing_residential.csv")
+sold.to_csv("sold.csv")
+listing.to_csv("listing.csv")
+files.to_csv("all_files.csv")
+listing_residential.to_csv("listing_residential.csv")
+sold_residential.to_csv("sold_residential.csv")
