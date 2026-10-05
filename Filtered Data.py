@@ -16,10 +16,8 @@ print(f"Dimensions: {sold.shape}") #603,958 x 85
 print(f"Data types:\n{sold.dtypes}")
 
 print(f"Unique Property Types in Sold Data: {sold['PropertyType'].unique()}")
-'''
 
 solds = sold[sold["PropertyType"] == "Residential"]
-'''
 
 print(f"Filtered Residential Sold Data: {solds.shape}")
 
@@ -36,10 +34,8 @@ print(f"Dimensions: {listing.shape}") #847,319, 85
 print(f"Data types:\n{listing.dtypes}") 
 
 print(f"Unique Property Types in Listing Data: {listing['PropertyType'].unique()}")
-'''
 
 listings = listing[listing["PropertyType"] == "Residential"]
-'''
 
 print(f"Filtered Residential Listing Data: {listings.shape}")
 
