@@ -4,7 +4,6 @@ sold = pd.read_csv("sold.csv", low_memory = False)
 listing = pd.read_csv("listing.csv", low_memory = False)
 
 # Dataset Undertanding
-'''
 
 print("\n Sold Dataset: ")
 
@@ -128,7 +127,7 @@ for column in numeric_fields:
     plt.ylabel("Value")
     plt.title(f"Boxplot of {column} in Listing Data")
     plt.show()
-'''
+
 print(f"Top 10 largest values in Sold ClosePrice:\n{solds['ClosePrice'].nlargest(10)}")
 print(f"Top 10 largest values in Sold LivingArea:\n{solds['LivingArea'].nlargest(10)}")
 print(f"Top 10 largest values in Sold DaysOnMarket:\n{solds['DaysOnMarket'].nlargest(10)}")
